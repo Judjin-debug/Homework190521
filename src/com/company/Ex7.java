@@ -27,11 +27,19 @@ public class Ex7 {
         scan.close();
     };
 
+    //formatting, magic numbers -> private static final NAME_IN_UPPER_CASE, arguments names, redundant if else
     static boolean doesCloseRect (Double r, Double a, Double b) {
         if (r < 0.5*Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))) {
             return false;
         } else
             return true;
     };
+
+    static boolean doesCircleCloseRectangle (double r, double rectHeight, double rectWidth) {
+        return r > 0.5 * Math.sqrt(Math.pow(rectHeight, 2) + Math.pow(rectWidth, 2)));
+    };
+
+
+
 
 };
