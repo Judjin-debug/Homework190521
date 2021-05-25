@@ -17,6 +17,7 @@ public class Ex8 {
         }
     };
 
+    // Зачем эта функция? разве check2 не достаточно?
     static String check (String str) throws IOException {
         try {
             Integer temp = Integer.parseInt(str);
