@@ -10,6 +10,7 @@ public class Ex10 {
         try {
             Integer token = 0;
             ArrayList<Integer> list = new ArrayList<>();
+            // файлы клади в src/resources/ или вообще в отдельную папку data или input на корневом уровне
             File file = new File("src/Ex10Input.txt");
             Scanner scan = new Scanner(file).useDelimiter(",\\s*");
             while (scan.hasNext()) {
@@ -33,7 +34,7 @@ public class Ex10 {
     };
 
     static boolean analyzeSpace (Integer[] arr) {
-        
+        // почему написав эти комменты не задумался переделать arr в норамальные имена? тогда и коммнты не понадобились бы и расшифровка условия
         //arr[0] - first house length
         //arr[1] - first house width
         //arr[2] - second house length
