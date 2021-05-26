@@ -74,7 +74,7 @@ public class Ex15alt {
     };
 
     //only odd numbers get inputted here to skip the division check for even numbers
-    static boolean cheeseSolution (int num) {
+    static boolean isPrime (int num) {
 
         if (num == 1)
             return false;
