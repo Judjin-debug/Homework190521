@@ -90,6 +90,7 @@ public class Ex15 {
 
     static int[] priDivCheck(int[] inArr, int pri) {
 
+        // скобки
         if (pri == 0)
             return inArr;
 
@@ -105,6 +106,8 @@ public class Ex15 {
 
     };
 
+    // зачем? 
+// Arrays.stream(array).filter(i -> i > 1).toArray();
     static int[] zeroNegOneFilter (int[] arr) {
 
         ArrayList<Integer> list = new ArrayList<>();
@@ -137,6 +140,7 @@ public class Ex15 {
       };
     };
 
+    // что это
     static void brokenIntArrOut (int[] arr) {
         System.out.println("Displaying array: ");
         for (int i = 0; i < arr.length; i++) {
