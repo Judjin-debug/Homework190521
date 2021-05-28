@@ -11,6 +11,9 @@ public class Ex9 {
             System.out.println("Input the day: ");
             arr[0] = Integer.parseInt(scan.next());
             if (arr[0] <= 0) {
+                // Выбрал не то исклбчение. IOException вводит в заблуждение.
+                // IOException означает что проблема в потоках ввода вывода, например не читается файл или не вводится из консоли.
+                // Тут всего лишь на вход функции пришёл невалидный аргумент - IllegalArgumentException, просто RuntimeException с сообщением, свой кастомный класс например InvalidDateException
                 throw new IOException("Day can't be negative or zero");
             };
             if (arr[0] > 31) {
@@ -25,6 +28,9 @@ public class Ex9 {
                 throw new IOException("Month is out of bounds");
             };
             System.out.println("Input the year: ");
+            // дичь, не надо в массивах хранить значения разной природы - месяцы, дни и года например.
+            // как бы ты держал в голове под каким индексом какая переменная?
+            // я к этой строчке уже забыл и приходится возвращаться назад и перечитывать код.
             if ((arr[1] == 1 && arr[0] > 31) || (arr[1] == 2 && arr[0] > 29) || (arr[1] == 3 && arr[0] > 31)
                  || (arr[1] == 4 && arr[0] > 30) || (arr[1] == 5 && arr[0] > 31)
                     || (arr[1] == 6 && arr[0] > 30) || (arr[1] == 7 && arr[0] > 31)
@@ -37,11 +43,12 @@ public class Ex9 {
             if (arr[2] < 0) {
                 throw new IOException("Year can't be negative");
             };
+            // это должно быть в функции resolveNextDate
             //checking the leap year
             if ((arr[2] % 4 != 0) && (arr[1] == 2) && (arr[0] == 29)) {
                 throw new IOException("29'th of February can only be in a leap year");
             };
-
+            
             scan.close();
             Integer[] temp = resolveNextDate(arr);
             System.out.println(temp[0] + "-" + temp[1] + "-" + temp[2]);
@@ -50,7 +57,7 @@ public class Ex9 {
             ex.printStackTrace();
         }
     };
-
+    // отличное имя)
     static Integer[] resolveNextDate (Integer[] arr) {
         Integer[] temp = new Integer[3];
 
